@@ -19,6 +19,7 @@ type Joke = {
 export default function Home() {
     const [query, setQuery] = useState('');
     const [jokes, setJokes] = useState<Joke[]>();
+    const [error, setError] = useState(false);
     const [luckyJoke, setLuckyJoke] = useState('');
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -30,6 +31,10 @@ export default function Home() {
 
             const data = await response.json();
             setLuckyJoke('');
+            if (data.total === 0) {
+                setError(true);
+                return;
+            }
             setJokes(data.result);
         }
     };
@@ -38,6 +43,7 @@ export default function Home() {
         const response = await fetch('https://api.chucknorris.io/jokes/random');
 
         setJokes([]);
+        setError(false);
         setLuckyJoke((await response.json()).value);
     };
 
@@ -53,14 +59,12 @@ export default function Home() {
 
             {luckyJoke && <LuckyJokeCard luckyJoke={luckyJoke} />}
             <div className="flex flex-col items-center gap-4 overflow-auto">
-                {jokes && jokes.length > 0 ? (
+                {jokes &&
                     jokes.map((joke) => (
                         <JokesCard key={joke.id} joke={joke} query={query} />
-                    ))
-                ) : (
-                    <p>Nenhuma piada encontrada.</p>
-                )}
+                    ))}
             </div>
+            {error && <p>Nenhuma piada encontrada.</p>}
         </div>
     );
 }
