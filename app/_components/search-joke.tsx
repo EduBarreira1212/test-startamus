@@ -9,18 +9,24 @@ type SearchJokeProps = {
 const SearchJoke = ({ handleSubmit, query, setQuery }: SearchJokeProps) => {
     return (
         <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+            <label htmlFor="joke-search" className="sr-only">
+                Buscar uma piada
+            </label>
             <input
+                id="joke-search"
                 type="text"
                 placeholder="Busque uma piada"
                 className="w-full rounded border p-2"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
+                aria-label="Digite sua busca por piadas"
             />
-            <input
+            <button
                 type="submit"
-                value="Buscar"
-                className="cursor-pointer rounded bg-blue-500 px-4 py-2 text-white"
-            />
+                className="cursor-pointer rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+            >
+                Buscar
+            </button>
         </form>
     );
 };
