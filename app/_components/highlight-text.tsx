@@ -12,9 +12,9 @@ const HighlightText = ({ text, highlight }: HighlightTextProps) => {
         <p className="text-black">
             {parts.map((part, index) =>
                 part.toLowerCase() === highlight.toLowerCase() ? (
-                    <span key={index} className="bg-yellow-300">
+                    <mark key={index} className="bg-yellow-300">
                         {part}
-                    </span>
+                    </mark>
                 ) : (
                     part
                 ),
