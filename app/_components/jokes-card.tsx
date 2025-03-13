@@ -1,23 +1,28 @@
 import HighlightText from './highlight-text';
+import { Joke as JokeType } from '../page';
 
 type Joke = {
-    joke: {
-        categories: string[];
-        created_at: string;
-        icon_url: string;
-        id: string;
-        updated_at: string;
-        url: string;
-        value: string;
-    };
+    joke: JokeType;
     query: string;
 };
 
 const JokesCard = ({ joke, query }: Joke) => {
     return (
-        <div key={joke.id} className="w-1/2 rounded border bg-white p-4 shadow">
+        <section key={joke.id} className="w-1/2 rounded border bg-white p-4 shadow">
             <HighlightText highlight={query} text={joke.value} />
-        </div>
+            {joke.categories.length > 0 && (
+                <div className="mt-2 flex gap-2">
+                    {joke.categories.map((category) => (
+                        <span
+                            key={category}
+                            className="rounded bg-gray-200 px-2 py-1 text-gray-800"
+                        >
+                            Category: {category}
+                        </span>
+                    ))}
+                </div>
+            )}
+        </section>
     );
 };
 
