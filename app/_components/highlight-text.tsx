@@ -1,13 +1,11 @@
 import React from 'react';
 
-interface HighlightTextProps {
+type HighlightTextProps = {
     text: string;
     highlight: string;
-}
+};
 
-const HighlightText: React.FC<HighlightTextProps> = ({ text, highlight }) => {
-    if (!highlight) return <p>{text}</p>;
-
+const HighlightText = ({ text, highlight }: HighlightTextProps) => {
     const parts = text.split(new RegExp(`(${highlight})`, 'gi'));
 
     return (
