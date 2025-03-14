@@ -6,16 +6,22 @@ type LuckyJokeCardProps = {
 
 const LuckyJokeCard = ({ luckyJoke }: LuckyJokeCardProps) => {
     return (
-        <article className="max-w-[80%] rounded border bg-white p-4 shadow">
-            <p className="text-black">{luckyJoke.value}</p>
+        <article className="max-w-[80%] rounded-lg border bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
+            <div className="mb-4 flex items-center justify-between">
+                <p className="text-xl font-semibold text-gray-800">
+                    ID:{' '}
+                    <span className="font-normal text-gray-600">{luckyJoke.id}</span>
+                </p>
+            </div>
+            <p className="mb-4 text-lg text-gray-900">{luckyJoke.value}</p>
             {luckyJoke.categories.length > 0 && (
-                <div className="mt-2 flex gap-2">
+                <div className="mt-4 flex flex-wrap gap-3">
                     {luckyJoke.categories.map((category) => (
                         <span
                             key={category}
-                            className="rounded bg-gray-200 px-2 py-1 text-gray-800"
+                            className="rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-600 transition duration-300 hover:bg-blue-200"
                         >
-                            Category: {category}
+                            {category}
                         </span>
                     ))}
                 </div>
