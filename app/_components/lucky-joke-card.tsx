@@ -6,9 +6,9 @@ type LuckyJokeCardProps = {
 
 const LuckyJokeCard = ({ luckyJoke }: LuckyJokeCardProps) => {
     return (
-        <article className="max-w-[80%] rounded-lg border bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
+        <article className="max-w-[90%] rounded-lg border bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
             <div className="mb-4 flex items-center justify-between">
-                <p className="text-xl font-semibold text-gray-800">
+                <p className="text-lg font-semibold text-gray-800">
                     ID:{' '}
                     <span className="font-normal text-gray-600">{luckyJoke.id}</span>
                 </p>
