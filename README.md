@@ -11,6 +11,22 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Build
+
+To build the application, use the following command:
+
+```bash
+npm run build
+```
+
+## Build
+
+To start the build, use the following command:
+
+```bash
+npm run start
+```
+
 ## Running Tests
 
 To run the tests for this project, use the following command:
@@ -43,6 +59,7 @@ Here is an overview of the project's structure:
 ## Stack
 
 - Next.js with TypeScript and Tailwind CSS
+- Jest to create tests
 
 ## Improvement suggestion
 
