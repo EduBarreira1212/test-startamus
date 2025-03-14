@@ -16,13 +16,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 To run the tests for this project, use the following command:
 
 ```bash
-npm test
+npm run test
 ```
 
 To run the tests and see coverage, use the following command:
 
 ```bash
-npm test:coverage
+npm run test:coverage
 ```
 
 ## Project Structure
