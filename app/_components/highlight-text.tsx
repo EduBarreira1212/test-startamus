@@ -6,6 +6,14 @@ type HighlightTextProps = {
 };
 
 const HighlightText = ({ text, highlight }: HighlightTextProps) => {
+    if (!text) {
+        return <p className="text-black"></p>;
+    }
+
+    if (!highlight) {
+        return <p className="text-black">{text}</p>;
+    }
+
     const parts = text.split(new RegExp(`(${highlight})`, 'gi'));
 
     return (
