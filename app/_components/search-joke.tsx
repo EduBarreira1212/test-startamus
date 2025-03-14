@@ -23,7 +23,7 @@ const SearchJoke = ({ handleSubmit, query, setQuery }: SearchJokeProps) => {
             />
             <button
                 type="submit"
-                className="cursor-pointer rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+                className="cursor-pointer rounded bg-blue-500 px-4 py-2 text-white transition-colors duration-200 hover:bg-blue-600"
             >
                 Buscar
             </button>
