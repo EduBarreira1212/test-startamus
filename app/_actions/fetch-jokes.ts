@@ -2,7 +2,7 @@
 
 import 'server-only';
 
-export async function fetchJokes(query: string) {
+export const fetchJokes = async (query: string) => {
     try {
         const res = await fetch(
             `https://api.chucknorris.io/jokes/search?query=${query}`,
@@ -13,4 +13,4 @@ export async function fetchJokes(query: string) {
         console.error(error);
         return [];
     }
-}
+};

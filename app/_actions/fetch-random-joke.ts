@@ -2,7 +2,7 @@
 
 import 'server-only';
 
-export async function fetchRandomJoke() {
+export const fetchRandomJoke = async () => {
     try {
         const res = await fetch('https://api.chucknorris.io/jokes/random');
         return res.json();
@@ -10,4 +10,4 @@ export async function fetchRandomJoke() {
         console.error(error);
         return null;
     }
-}
+};
