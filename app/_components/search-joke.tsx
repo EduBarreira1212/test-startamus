@@ -8,7 +8,11 @@ type SearchJokeProps = {
 
 const SearchJoke = ({ handleSubmit, query, setQuery }: SearchJokeProps) => {
     return (
-        <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+        <form
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-3"
+            data-testid="search-form"
+        >
             <label htmlFor="joke-search" className="sr-only">
                 Buscar uma piada
             </label>
