@@ -14,11 +14,13 @@ Second, run the development server:
 npm run dev
 ```
 
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
 ## IMPORTANT
 
 If an error happens when running 'npm run dev', try to downgrade node to v20.19.0.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Them make the Getting Started again
 
 ## Build
 
